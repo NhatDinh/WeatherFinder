@@ -1,3 +1,220 @@
+/* ------------------------------------------------------------------- */
+/* Import Section
+---------------------------------------------------------------------- */
+@import url("base.css");				/* Default Reset, Typography, Forms, etc. */
+@import url("responsive.css");			/* Responsive Grid */
+@import url("font-awesome.css");		/* Font Awesome Icons */
+@import url("http://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("http://fonts.googleapis.com/css?family=Lato:400,700,300");
+
+/* ------------------------------------------------------------------- */
+/* Job List Styles
+---------------------------------------------------------------------- */
+.padding-right { padding-right: 20px; }
+
+.resumes-list,
+.job-list {
+	margin-bottom: 30px;
+}
+
+.resumes-list li,
+.job-list li {
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
+    position: relative;
+	z-index: 99;
+}
+
+.resumes-list li a,
+.job-list li a {
+	color: #808080;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+
+.resumes-list li:last-child,
+.job-list li:last-child {
+    border-bottom: 1px solid #e0e0e0;
+} 
+
+.resumes-list li:nth-child(2n),
+.job-list li:nth-child(2n) {
+    background-color: #fbfbfb;
+}
+
+.resumes-list li:hover,
+.job-list li:hover {
+	background-color: rgba(80, 80, 80,0.05);
+	border-color: rgba(80, 80, 80,0.7);
+	z-index: 1011;
+}
+
+.resumes-list li.highlighted a:before,
+.resumes-list li a:before,
+.job-list li.highlighted a:before,
+.job-list li a:before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	position: absolute;
+	-webkit-box-shadow: 0px 1px 0px 0px rgba(80, 80, 80,0.7);
+	-moz-box-shadow: 0px 1px 0px 0px rgba(80, 80, 80,0.7);
+	box-shadow: 0px 1px 0px 0px rgba(80, 80, 80,0.7);
+	top: 0;
+	left: 0;
+	z-index: 101;
+	opacity: 0;
+}
+
+.resumes-list li:hover a:before,
+.job-list li:hover a:before { opacity: 1 }
+
+
+.resume-titlebar span a:hover i,
+.resumes-list li,
+.resumes-list li a:before,
+.job-list li,
+.job-list li a:before {
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+
+/* Highlighted Job*/
+.resumes-list li.highlighted a:before,
+.job-list li.highlighted a:before {
+	-webkit-box-shadow: 0px 1px 0px 0px #e0da94 !important;
+	-moz-box-shadow: 0px 1px 0px 0px #e0da94 !important;
+	box-shadow: 0px 1px 0px 0px #e0da94 !important;
+	opacity: 1;
+}
+
+.resumes-list li.highlighted,
+.job-list li.highlighted {
+	background-color: #fefff6 !important;
+	border-color: #e0da94 !important;
+	z-index: 100;
+}
+
+
+/* Icons */
+.resume-titlebar i,
+.job-spotlight i,
+.job-list li a i,
+.resumes-list li a i {
+	color: #999;
+	margin-right: 4px;
+}
+
+.resume-titlebar span a:hover i {
+	color: #505050;
+}
+
+.resume-titlebar span,
+.job-spotlight span,
+.job-list li a span,
+.resumes-list li a span {
+	margin-right: 17px;
+	display: inline-block;
+}
+
+.job-icons span {
+	margin-bottom: 8px;
+}
+
+
+/* Text */
+.resumes-list li a p,
+.job-list li a p {
+	line-height: 27px;
+	margin: 11px 0 0 0;
+	padding-right: 40px;
+	color: #666;
+}
+
+
+/* Content*/
+.job-list img {
+	float: left;
+	display: inline-block;
+	margin-left: 35px;
+	margin-top: 2px;
+	width: 60px;
+	height: 60px;
+}
+
+
+.resumes-list img {
+	border-radius: 50%;
+	width: 90px;
+	height: 90px;  
+	float: left;
+	display: inline-block;
+	margin: 35px 0 35px 35px;
+}
+
+.resume-titlebar img {
+	border-radius: 50%;
+	width: 110px;
+	height: 110px;
+	margin-top: 6px;
+	margin-left: 0;
+	float: left;
+	display: inline-block;
+}
+
+
+.resume-titlebar .resumes-list-content,
+.resumes-list .resumes-list-content,
+.job-list .job-list-content {
+	display: block;
+	margin-left: 125px;
+	position: relative;
+}
+
+.resume-titlebar .resumes-list-content { margin-left: 143px; }
+.resumes-list .resumes-list-content { margin-left: 160px; }
+
+.resumes-list .resumes-list-content,
+.job-list .job-list-content,
+.job-list img {
+	padding: 35px 0;
+}
+
+.job-list .job-list-content { padding-right: 20px; }
+
+.resumes-list .resumes-list-content { padding: 34px 0 46px 0; }
+.resume-titlebar .resumes-list-content { padding: 5px 0 15px 0; }
+
+.job-list .job-list-content h4 {
+	line-height: 31px;
+	margin: 0px 0 8px 0;
+}
+
+.job-list.full .job-list-content h4 { margin-bottom: 15px; }
+header.full-width #navigation ul.float-right { right: 35px; }
+/* Alternative Header & Menu style*/
+.alternative #navigation {
+	width: 100%;
+	border-top: 1px solid #e0e0e0;
+	margin: 27px 0 0 0;
+	padding: 24px 0 12px 0;
+}
+
+.alternative #navigation ul {
+	margin: 0;
+}
+
+.alternative .menu ul li { margin: 0 10px 0 0; }
+
+.alternative #navigation ul.float-right { top: 27px; }
+
+
 /* ---------------------------------- */
 /* Navigation
 ------------------------------------- */
@@ -90,3 +307,63 @@ ul.float-right li a:hover,
 	background-color: #505050;
 	color: #fff;
 }
+
+
+/* Drop-Down */
+.menu ul ul {
+	background-color: #282828;
+	z-index: 999;
+	margin: 0 0 0 0;
+	padding: 14px 0;
+	border-top: 10px solid inherit;
+}
+
+.menu ul ul:before {
+	font-family: "FontAwesome";
+	content:"";
+	font-size: 23px;
+	color: #282828;
+	display: block;
+	position: absolute;
+	top: -11px;
+	left: 13px;
+}
+
+.menu ul ul ul:before { content:"";}
+
+.menu > ul ul li:hover > a {
+	border-bottom: 0;
+	background: transparent;
+}
+
+.menu ul ul li {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.menu ul li.sfHover ul li a.sf-with-ul,
+.menu ul ul li a {
+	font-weight: 500;
+	text-transform: none;
+	color: #9f9f9f;
+	font-size: 14px;
+	line-height: 19px;
+	padding: 5px 18px !important;
+	border: 0;
+	margin-bottom: 0;
+	background-color: #282828;
+}
+
+
+.menu ul ul li:first-child { border: none; }
+
+.menu ul ul li a:hover,
+.menu ul li.sfHover ul li a.sf-with-ul:hover { color: #fff; }
+
+.menu ul ul ul {
+	margin: 0 0 0 3px;
+	border: none;
+}
+
+.padding-right { padding-right: 20px; }
