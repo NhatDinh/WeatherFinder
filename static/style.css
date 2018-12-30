@@ -8,6 +8,44 @@
 @import url("http://fonts.googleapis.com/css?family=Lato:400,700,300");
 
 /* ------------------------------------------------------------------- */
+/* Tags
+---------------------------------------------------------------------- */
+span.full-time { background-color: #186fc9; }
+span.part-time { background-color: #f1630d; }
+span.freelance { background-color: #53b427; }
+span.internship { background-color: #e1d123; }
+span.temporary { background-color: #e12335; }
+
+/* ------------------------------------------------------------------- */
+/* Header
+---------------------------------------------------------------------- */
+header {
+	height: 90px;
+	background-color: #fff;
+}
+
+#logo {
+	margin-left: 0;
+	display: inline-block;
+	float: left;
+}
+
+#logo img { margin-top: 24px; }
+
+
+/* Full-Width Header Styles */
+header.full-width .container, 
+header.full-width .container .sixteen.columns {
+	width: 100%;
+	padding-left: 20px;
+	box-sizing: border-box;
+	float: left;
+	margin: 0;
+}
+
+header.full-width #navigation ul.float-right { right: 35px; }
+
+/* ------------------------------------------------------------------- */
 /* Job List Styles
 ---------------------------------------------------------------------- */
 .padding-right { padding-right: 20px; }
@@ -25,7 +63,6 @@
 	z-index: 99;
 }
 
-.resumes-list li a,
 .job-list li a {
 	color: #808080;
 	width: 100%;
@@ -33,25 +70,20 @@
 	display: inline-block;
 }
 
-.resumes-list li:last-child,
 .job-list li:last-child {
     border-bottom: 1px solid #e0e0e0;
 } 
 
-.resumes-list li:nth-child(2n),
 .job-list li:nth-child(2n) {
     background-color: #fbfbfb;
 }
 
-.resumes-list li:hover,
 .job-list li:hover {
 	background-color: rgba(80, 80, 80,0.05);
 	border-color: rgba(80, 80, 80,0.7);
 	z-index: 1011;
 }
 
-.resumes-list li.highlighted a:before,
-.resumes-list li a:before,
 .job-list li.highlighted a:before,
 .job-list li a:before {
 	content: "";
@@ -68,13 +100,9 @@
 	opacity: 0;
 }
 
-.resumes-list li:hover a:before,
+
 .job-list li:hover a:before { opacity: 1 }
 
-
-.resume-titlebar span a:hover i,
-.resumes-list li,
-.resumes-list li a:before,
 .job-list li,
 .job-list li a:before {
 	-webkit-transition: all 0.2s ease-in-out;
@@ -85,8 +113,7 @@
 }
 
 
-/* Highlighted Job*/
-.resumes-list li.highlighted a:before,
+/* Highlighted */
 .job-list li.highlighted a:before {
 	-webkit-box-shadow: 0px 1px 0px 0px #e0da94 !important;
 	-moz-box-shadow: 0px 1px 0px 0px #e0da94 !important;
@@ -94,7 +121,6 @@
 	opacity: 1;
 }
 
-.resumes-list li.highlighted,
 .job-list li.highlighted {
 	background-color: #fefff6 !important;
 	border-color: #e0da94 !important;
@@ -158,38 +184,20 @@
 	margin: 35px 0 35px 35px;
 }
 
-.resume-titlebar img {
-	border-radius: 50%;
-	width: 110px;
-	height: 110px;
-	margin-top: 6px;
-	margin-left: 0;
-	float: left;
-	display: inline-block;
-}
 
-
-.resume-titlebar .resumes-list-content,
-.resumes-list .resumes-list-content,
 .job-list .job-list-content {
 	display: block;
 	margin-left: 125px;
 	position: relative;
 }
 
-.resume-titlebar .resumes-list-content { margin-left: 143px; }
-.resumes-list .resumes-list-content { margin-left: 160px; }
 
-.resumes-list .resumes-list-content,
 .job-list .job-list-content,
 .job-list img {
 	padding: 35px 0;
 }
 
 .job-list .job-list-content { padding-right: 20px; }
-
-.resumes-list .resumes-list-content { padding: 34px 0 46px 0; }
-.resume-titlebar .resumes-list-content { padding: 5px 0 15px 0; }
 
 .job-list .job-list-content h4 {
 	line-height: 31px;
@@ -308,62 +316,5 @@ ul.float-right li a:hover,
 	color: #fff;
 }
 
-
-/* Drop-Down */
-.menu ul ul {
-	background-color: #282828;
-	z-index: 999;
-	margin: 0 0 0 0;
-	padding: 14px 0;
-	border-top: 10px solid inherit;
-}
-
-.menu ul ul:before {
-	font-family: "FontAwesome";
-	content:"";
-	font-size: 23px;
-	color: #282828;
-	display: block;
-	position: absolute;
-	top: -11px;
-	left: 13px;
-}
-
-.menu ul ul ul:before { content:"";}
-
-.menu > ul ul li:hover > a {
-	border-bottom: 0;
-	background: transparent;
-}
-
-.menu ul ul li {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-}
-
-.menu ul li.sfHover ul li a.sf-with-ul,
-.menu ul ul li a {
-	font-weight: 500;
-	text-transform: none;
-	color: #9f9f9f;
-	font-size: 14px;
-	line-height: 19px;
-	padding: 5px 18px !important;
-	border: 0;
-	margin-bottom: 0;
-	background-color: #282828;
-}
-
-
-.menu ul ul li:first-child { border: none; }
-
-.menu ul ul li a:hover,
-.menu ul li.sfHover ul li a.sf-with-ul:hover { color: #fff; }
-
-.menu ul ul ul {
-	margin: 0 0 0 3px;
-	border: none;
-}
 
 .padding-right { padding-right: 20px; }
