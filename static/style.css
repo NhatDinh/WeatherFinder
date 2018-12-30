@@ -318,3 +318,43 @@ ul.float-right li a:hover,
 
 
 .padding-right { padding-right: 20px; }
+
+/* Announce */
+.announce {
+	color: #fff;
+	font-size: 24px;
+	font-weight: 300;
+	margin-top: 40px;
+}
+
+.announce strong {
+	font-size: 30px;
+	color: #fff;
+}
+
+.search-container {
+	display: block;
+	width: 100%;
+	position: relative;
+	padding: 170px 0;
+	margin-top: -10px;
+}
+
+.search-container h2 {
+	font-size: 46px;
+	color: #fff;
+	margin-bottom: 30px;
+	letter-spacing: -1px;
+}
+
+.search-container input {
+	font-weight: 500;
+	font-size: 18px;
+	float: left;
+	box-sizing: border-box;
+	padding: 19px 20px;
+	border: none;
+	margin-right: 2%;
+	width: 44.5%;
+	float: left;
+}
