@@ -1,4 +1,5 @@
-import requests, sys, json, sqlite3
+import requests, sys, json, sqlite3, operator
+from collections import OrderedDict
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
@@ -15,33 +16,36 @@ class City(db.Model):
 
 @app.route('/', methods = ['GET','POST'])
 def index():
-	weather_list = []
-
+	weather_list = {}
 	if request.method == 'POST':
 		new_city = request.form.get('city').lower()
+		# sql query 
 		if new_city:
 			dup = City.query.filter_by(name=new_city).first()
 			if not dup:
 				new_city_entry = City(name=new_city)
 				db.session.add(new_city_entry)
 				db.session.commit()
-	
-	cities = City.query.all()
-	for city in cities:
-		weather_obj = get_weather_obj(city.name)
-		weather_list.insert(0, weather_obj)
 
+	#deal with db
 	conn = sqlite3.connect('weather.db')
 	c = conn.cursor()
 
-	city_arr = []
-	for city in c.execute('SELECT * FROM City'):
-		city_arr.append(city)
-		print(city)
-        
+	for row in c.execute('SELECT * FROM City'):
+		city_name = row[1]
+		city_id = row[0]
+		weather_obj = get_weather_obj(city_name)
+		weather_list[city_id] = weather_obj
 
-	return render_template('weather.html', weather_list = weather_list, city_arr = city_arr)
- 
+	
+	weather_list = reverse_dict(weather_list)
+	return render_template('weather.html', weather_list = weather_list)
+
+#sort dict from newest to oldest
+def reverse_dict(weather_list):
+ 	weather_list_descending = OrderedDict(sorted(weather_list.items(), key=lambda kv: kv[0], reverse=True))
+ 	return weather_list_descending
+
 def get_weather_obj(name):
 	url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid={}'
 	appid = 'fa4724f5f22671dd87b730a82c8a3e5a'

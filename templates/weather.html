@@ -6,7 +6,7 @@
 <!-- Basic Page Needs
 ================================================== -->
 <meta charset="utf-8">
-<link rel="icon" href='http://openweathermap.org/img/w/{{weather_list[0]["icon"]}}.png' alt="">
+<link rel="icon" href='' alt="">
 <title>WeatherFinder</title>
 
 <!-- Mobile Specific Metas
@@ -92,18 +92,20 @@
 	</div>
 </div>
 
+<!--
 <div class = 'DEBUG'>
-	<h1>{{city_arr}}</h1>
+	<h1>{{weather_list}}</h1>
 </div>
+-->
 
-<div class="container">
 	
-	<!-- Recent Jobs -->
+<div class="container">
+
 	<div class="eleven columns">
 	<div class="padding-right">
 		<h3 class="margin-bottom-25">Weather by cities</h3>
 		<ul class="job-list">
-			{% for each in weather_list %}
+			{% for key, each in weather_list.items() %}
 			<li class="highlighted"><a href="#">
 				<img src='http://openweathermap.org/img/w/{{each['icon']}}.png' alt="">
 				<div class="job-list-content">
