@@ -15,7 +15,7 @@ class City(db.Model):
 
 @app.route('/', methods = ['GET','POST'])
 def index():
-	url = 'https://api.openweathermap.org/data/2.5/weather?q={}&appid={}'
+	url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid={}'
 	appid = 'fa4724f5f22671dd87b730a82c8a3e5a'
 	weather_list = []
 	
@@ -47,4 +47,4 @@ def index():
 	return render_template('weather.html', weather_list = weather_list)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(DEBUG=True)
