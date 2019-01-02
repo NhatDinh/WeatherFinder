@@ -17,7 +17,7 @@
 ================================================== -->
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
 <link rel="stylesheet" href="{{ url_for('static',filename='colors/peach.css') }}"" id="colors">
-<link rel="icon" href="http://openweathermap.org/img/w/{{weather_list.get(1)['icon']}}.png">
+<link rel="icon" href="http://openweathermap.org/img/w/{{weather_list.get(len)['icon']}}.png">
 
 <!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -45,7 +45,7 @@
 					<!--<img src="static/logo/pinterest_profile_image.png" height="50" width="50"/>--></a></h1>
 				</li>
 
-				<li><a href="index.html" id="current">Home</a>
+				<li><a href="index.html" id="current"><h4><strong> Weather Finder </strong> </h4></a>
 				</li>
 
 				<li><a href="#">Saved weather</a></li>
@@ -76,23 +76,25 @@
 			<div class="search-container">
 
 				<!-- Form -->
-				<h2 class="announce" ><strong> Weather Finder </strong></h2>
 				<form method="POST">
 				<input type="text" class="ico-01" name="city" placeholder="city name" value=""/>
 				<button><i class="fa fa-search"></i></button>
 				</form>
 
-				<!-- Announce -->
-				<div class="announce">
-					Enjoy the weather !
-				</div>
-
+				<!-- Display the last added city in db -->
+				<h3 class="announce" ><strong> Newest city: </strong></h3>
+				<img src="http://openweathermap.org/img/w/{{weather_list.get(len)['icon']}}.png" alt="">
+					<h3> <strong>{{ weather_list.get(len)['city_name'] }} </strong><span class="part-time"> {{ weather_list.get(len)['description'] }} </span></h3>
+					<div class="job-icons">
+						<span><i class="fa fa-briefcase"></i>  {{ weather_list.get(len)['temp'] }} &#8457  </span>
+					</div>
 			</div>
-
 		</div>
 	</div>
 </div>
-
+						
+					
+			
 <!--
 <div class = 'DEBUG'>
 	<h1>{{weather_list}}</h1>
@@ -101,7 +103,6 @@
 
 	
 <div class="container">
-
 	<div class="eleven columns">
 	<div class="padding-right">
 		<h3 class="margin-bottom-25">Weather by cities</h3>

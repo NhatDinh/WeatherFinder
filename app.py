@@ -39,7 +39,8 @@ def index():
 
 	
 	weather_list = reverse_dict(weather_list)
-	return render_template('weather.html', weather_list = weather_list)
+	length = len(weather_list)
+	return render_template('weather.html', weather_list = weather_list, len = length)
 
 #sort dict from newest to oldest
 def reverse_dict(weather_list):
