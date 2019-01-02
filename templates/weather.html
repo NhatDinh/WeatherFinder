@@ -6,7 +6,7 @@
 <!-- Basic Page Needs
 ================================================== -->
 <meta charset="utf-8">
-<link rel="icon" href='' alt="">
+<link rel="icon" href="http://openweathermap.org/img/w/{{weather_list.get(len)['icon']}}.png" alt="">
 <title>WeatherFinder</title>
 
 <!-- Mobile Specific Metas
@@ -45,7 +45,7 @@
 					<!--<img src="static/logo/pinterest_profile_image.png" height="50" width="50"/>--></a></h1>
 				</li>
 
-				<li><a href="weather.html" id="current"><h4><strong> Weather Finder </strong> </h4></a>
+				<li><a href="#" id="current"><h4><strong> Weather Finder </strong> </h4></a>
 				</li>
 
 				<li><a href="#">Saved weather</a></li>
@@ -62,6 +62,10 @@
 
 		</nav>
 
+		<!-- Navigation -->
+		<div id="mobile-navigation">
+			<a href="#menu" class="menu-trigger"><i class="fa fa-reorder"></i> Menu</a>
+		</div>
 	</div>
 </div>
 </header>
